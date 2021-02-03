@@ -1,0 +1,104 @@
+.login-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background: url(../img/bg1.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+       
+        .header__item {
+            min-width: 70px;
+            padding: 15px;
+            font-size: 24px;
+            color: white;
+            user-select: none;
+            cursor: pointer;
+            transition-duration: .5s;
+        }
+        .header__item:hover {
+            font-size: 26px;
+            text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+            transition-duration: .5s;
+        }
+    }
+
+    .welcome {
+        position: absolute;
+        padding: 10px;
+        top: 20%;
+        right: 10%;
+        font-size: 40px;
+        color: white;
+        text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+
+        .welcome__note {
+            top: 140%;
+            right: 0;
+            position: absolute;
+            font-size: 15px;
+            text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+        }
+    }
+
+    .form-wrapper {
+        position: relative;
+        width: 300px;
+
+        .login, .registration {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+
+            input {
+                margin-top: 30px;
+                padding: 10px;
+                width: 300px;
+                border-radius: 4px;
+                outline: none;
+                border: none;
+                padding-left: 12px;
+                padding-right: 12px;
+                color: white;
+                font-size: 20px;
+                background: rgba(241, 238, 238, 0.5);
+                box-shadow: 1px 1px 20px rgb(230, 226, 226);
+            }
+            input::placeholder {
+                color: #b5b7b9;
+            }
+
+            .button {
+                margin-top: 30px;
+                height: 50px;
+                border-radius: 4px;
+                cursor: pointer;
+                user-select: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(241, 238, 238, 0.5);
+                box-shadow: 1px 1px 20px rgb(230, 226, 226);
+                color: white;
+                font-size: 24px;
+            }
+            .button:hover {
+                background: rgba(233, 227, 227, 0.5);
+                transition-duration: .5s;
+            }
+        }
+        
+        //анимация появления формы средствами vue
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity .5s;
+        }
+        .fade-enter, .fade-leave-to {
+            opacity: 0;
+        }
+    }        
+}

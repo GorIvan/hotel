@@ -1,28 +1,69 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <Login v-if="GET_VISIBILITIES.loginComponentVisible" />
+        <Main v-if="GET_VISIBILITIES.mainComponentVisible" />
+        <Account v-if="GET_VISIBILITIES.accountComponentVisible" />
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import Login from '@/components/Login.vue';
+    import Main from '@/components/Main.vue';
+    import Account from '@/components/Account.vue';
+    import { mapGetters, mapActions } from 'vuex';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: 'App',
+
+        data () {
+            return {
+                        
+            }
+        },
+
+        components: {
+            Login,
+            Main,
+            Account
+        },
+        
+        mounted () {
+        
+        },
+
+        computed: {
+            ...mapGetters(['GET_VISIBILITIES'])           
+        },
+         
+        methods: {
+            ...mapActions([  ]),
+        }    
+    }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    html {
+        height: 100%;
+    }
+    body {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+
+        #app {
+            height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .logo {
+            padding: 10px;
+            height: 70px;
+            margin-left: 15px;
+            margin-right: 30px;
+            align-self: center;
+        }
+    }
 </style>
